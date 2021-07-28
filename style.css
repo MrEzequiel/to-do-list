@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+input {
+  appearance: none;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background: #0d0d0d;
+  color: #f2f2f2;
+  font: 400 1.6rem 'Miriam Libre', sans-serif;
+}
+
+h1,
+h2 {
+  /* font-family: 'Handlee', cursive; */
+  font-family: 'Grand Hotel', cursive;
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+  word-spacing: 1.25rem;
+
+  font-size: 4.5rem;
+}
+
+header {
+  text-align: center;
+  margin: 2rem 0 4rem;
+}
+
+header span {
+  color: #d95032;
+}
+
+.item-to-do,
+.new-to-do {
+  max-width: min(800px, 80%);
+
+  padding: 1.5rem 1rem;
+  margin: 0 auto;
+
+  background: #141414;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.418);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-to-do {
+  margin-bottom: 1.5rem;
+
+  transition: background 300ms;
+}
+
+.item-to-do:hover {
+  background: #181818;
+}
+
+.item-to-do:last-child {
+  margin-bottom: 0;
+}
+
+.input-check {
+  border-radius: 0;
+}
+
+.item-to-do .input-check {
+  cursor: pointer;
+  appearance: none;
+  padding: 0 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  border: 0.3rem solid #d95032;
+  border-radius: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.input-check:before {
+  content: '';
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #d95032;
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+
+  transition: all 100ms;
+}
+
+.input-check:before {
+  border-radius: 0;
+  background: transparent;
+  border: 0.4rem solid #d95032;
+  border-left: 0;
+  border-top: 0;
+  width: 0.7rem;
+  height: 1.2rem;
+  transform: rotate(45deg);
+  top: 0.2rem;
+}
+
+.input-check:checked:before {
+  opacity: 1;
+}
+
+.input-check:checked + .item {
+  text-decoration: line-through;
+}
+
+.input-check:focus {
+  box-shadow: 0 0 5px #d95032;
+}
+
+.item-to-do .item {
+  width: 100%;
+
+  margin: 0 3rem;
+  font-size: 2rem;
+}
+
+.item-to-do .to-do-delete {
+  cursor: pointer;
+  background: #d95032;
+  color: #f2f2f2;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+
+  border-radius: 1rem;
+  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.486);
+
+  transition: background 250ms, color 250ms, transform 250ms;
+}
+
+.item-to-do .to-do-delete:hover {
+  transform: scale(1.2);
+  background: #f2f2f2;
+  color: #d95032;
+}
+
+.new-to-do {
+  height: 7rem;
+  background: #1d1d1d;
+  margin-bottom: 2rem;
+}
+
+.new-to-do span {
+  user-select: none;
+  color: #d95032;
+  font-size: 3rem;
+
+  transition: color 250ms, transform 250ms;
+}
+
+.new-to-do .add-to-do:hover {
+  transform: scale(1.2);
+  color: #f2f2f2;
+}
+
+.new-to-do span:last-child {
+  cursor: pointer;
+}
+
+.new-to-do input {
+  width: 100%;
+  height: 2.5rem;
+
+  background: none;
+  margin: 0 3rem;
+
+  font-size: 2rem;
+  color: #f2f2f2;
+}
